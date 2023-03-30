@@ -1,5 +1,5 @@
 <template>
-  <section class="custom-container mt-32 [ flex items-center ] ">
+  <section class="custom-container [ flex items-center ] ">
     <!-- Text container -->
     <div class="w-4/6
       [ rounded-r-[40px] bg-[#f7f5ef] ]

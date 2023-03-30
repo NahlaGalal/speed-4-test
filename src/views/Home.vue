@@ -1,6 +1,8 @@
 <template>
-  <HomeHeader />
-  <HomeAbout />
+  <div class="flex flex-col gap-32">
+    <HomeHeader />
+    <HomeAbout />
+  </div>
 </template>
 
 <script lang="ts">
