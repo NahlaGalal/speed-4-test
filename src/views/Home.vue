@@ -1,8 +1,8 @@
 <template>
   <div class="flex flex-col gap-32">
-    <HomeHeader />
+    <HomeHeader :sliders="slider" />
     <HomeAbout />
-    <HomeCategories />
+    <HomeCategories :categories="categories" />
   </div>
 </template>
 

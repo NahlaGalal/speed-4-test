@@ -1,7 +1,12 @@
 <template>
   <swiper :direction="'vertical'" :pagination="pagination" :modules="modules" :slides-per-view="1">
-    <swiper-slide v-for="item in items">
-      <slot name="item" v-bind="item"></slot>
+    <swiper-slide v-for="{ image, link, name, id } in sliders" :key="id">
+      <a class="[ flex items-center justify-around gap-5 ] 
+        [ w-full h-full ]
+        px-16" :href="link" target="_blank">
+        <span class="text-[82px] font-bold leading-[62px]">{{ name }}</span>
+        <img :src="image" alt="Illustrated image" class="object-contain [ w-full h-full ]">
+      </a>
     </swiper-slide>
   </swiper>
 </template>
@@ -11,11 +16,16 @@ import { Swiper, SwiperSlide } from "swiper/vue"
 import "swiper/css"
 import "swiper/css/pagination"
 import { Pagination } from "swiper"
+import { PropType } from "vue"
+import { ISlider } from "../Home/Types"
 
 export default {
   components: {
     Swiper,
     SwiperSlide
+  },
+  props: {
+    sliders: Array as PropType<ISlider[]>
   },
   setup() {
     return {
@@ -27,20 +37,6 @@ export default {
         },
       },
       modules: [Pagination],
-    }
-  },
-  data() {
-    return {
-      items: [
-        {
-          img: "/src/assets/images/header-slider-1.png",
-          text: "اشتري اﻵن"
-        },
-        {
-          img: "/src/assets/images/header-slider-2.png",
-          text: "اشتري اﻵن"
-        },
-      ]
     }
   }
 }

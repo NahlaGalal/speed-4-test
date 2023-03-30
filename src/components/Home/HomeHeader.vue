@@ -1,15 +1,6 @@
 <template>
   <header class="h-[calc(100vh_-_111px)] flex gap-20 items-center">
-    <VerticalSwiper>
-      <template #item="{ img, text }">
-        <div class="[ flex items-center justify-around ] 
-          [ w-full h-full ]
-          px-16">
-          <p class="text-[82px] font-bold leading-[62px]">{{ text }}</p>
-          <img :src="img" alt="Illustrated image" class="object-contain pt-14 [ h-full w-auto ]">
-        </div>
-      </template>
-    </VerticalSwiper>
+    <VerticalSwiper :sliders="sliders" v-if="sliders?.length" />
 
     <!-- Social icons -->
     <ul class="pl-14 flex flex-col gap-10">
@@ -38,9 +29,14 @@
 </template>
 
 <script lang="ts">
+import { PropType } from 'vue';
 import VerticalSwiper from '../Swiper/VerticalSwiper.vue';
+import { ISlider } from "./Types"
 
 export default {
-  components: { VerticalSwiper }
+  components: { VerticalSwiper },
+  props: {
+    sliders: Array as PropType<ISlider[]>
+  },
 }
 </script>
