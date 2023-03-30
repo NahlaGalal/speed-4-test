@@ -1,9 +1,8 @@
 <template>
-  <swiper :direction="'vertical'" :pagination="pagination" :modules="modules" :slides-per-view="1" class="mySwiper">
-    <swiper-slide>1</swiper-slide>
-    <swiper-slide>2</swiper-slide>
-    <swiper-slide>3</swiper-slide>
-    <swiper-slide>4</swiper-slide>
+  <swiper :direction="'vertical'" :pagination="pagination" :modules="modules" :slides-per-view="1">
+    <swiper-slide v-for="item in items">
+      <slot name="item" v-bind="item"></slot>
+    </swiper-slide>
   </swiper>
 </template>
 
@@ -27,7 +26,21 @@ export default {
           return `<span class="${className}">${(index + 1).toString().padStart(2, '0')}</span>`;
         },
       },
-      modules: [Pagination]
+      modules: [Pagination],
+    }
+  },
+  data() {
+    return {
+      items: [
+        {
+          img: "/src/assets/images/header-slider-1.png",
+          text: "اشتري اﻵن"
+        },
+        {
+          img: "/src/assets/images/header-slider-2.png",
+          text: "اشتري اﻵن"
+        },
+      ]
     }
   }
 }
@@ -42,17 +55,11 @@ export default {
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #fff;
+  background: #EDF0F3;
+  border-radius: 40px 0 0 40px;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 .swiper-pagination-vertical.swiper-pagination-bullets.swiper-pagination-bullets-dynamic,

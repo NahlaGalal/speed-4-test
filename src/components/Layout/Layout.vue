@@ -8,6 +8,8 @@ export default {
 </script>
 
 <template>
-  <Navbar />
-  <slot />
+  <div class="bg-[#fbf9f4]">
+    <Navbar />
+    <slot />
+  </div>
 </template>

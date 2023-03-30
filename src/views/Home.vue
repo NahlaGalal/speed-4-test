@@ -1,6 +1,13 @@
-<script lang="ts">
-</script>
-
 <template>
-  <p>Hello</p>
+  <div>
+    <HomeHeader />
+  </div>
 </template>
+
+<script lang="ts">
+import HomeHeader from '../components/Home/HomeHeader.vue';
+
+export default {
+    components: { HomeHeader }
+}
+</script>
