@@ -19,4 +19,8 @@
   .custom-container {
     @apply mx-14
   }
+
+  .ltr {
+    direction: ltr;
+  }
 }
