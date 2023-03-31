@@ -4,7 +4,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        Somar: "Somar, sans-serif"
+        Somar: "Somar, sans-serif",
+        Montserrat: "Montserrat, sans-serif"
       }
     },
   },
