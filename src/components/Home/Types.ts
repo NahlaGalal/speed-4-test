@@ -1,7 +1,7 @@
 export interface IHomeDetails {
   data: {
     categories: ICategory[];
-    latest_auctions: any[];
+    latest_auctions: IProduct[];
     latest_products: IProduct[];
     slider: ISlider[];
   };

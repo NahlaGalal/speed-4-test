@@ -3,6 +3,8 @@
     <HomeHeader :sliders="slider" />
     <HomeAbout />
     <HomeCategories :categories="categories" />
+    <HomeProducts :products="latest_auctions" :title="'أحدث المزادات'" v-if="latest_auctions.length" />
+    <HomeProducts :products="latest_products" :title="'أحدث الإضافات'" v-if="latest_products.length" />
   </div>
 </template>
 
@@ -10,11 +12,12 @@
 import HomeAbout from '../components/Home/HomeAbout.vue';
 import HomeCategories from '../components/Home/HomeCategories.vue';
 import HomeHeader from '../components/Home/HomeHeader.vue';
+import HomeProducts from '../components/Home/HomeProducts.vue';
 import { getHomeDetails } from "../services/HomeService"
 import { IHomeDetails } from "../components/Home/Types"
 
 export default {
-  components: { HomeHeader, HomeAbout, HomeCategories },
+  components: { HomeHeader, HomeAbout, HomeCategories, HomeProducts },
   data(): IHomeDetails["data"] {
     return {
       slider: [],
