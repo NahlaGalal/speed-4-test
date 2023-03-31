@@ -1,6 +1,6 @@
 <template>
-  <section class="[ bg-[url(src/assets/images/home-ads.png)] bg-cover bg-no-repeat ] 
-    [ min-h-[100vw_/_2.503] flex items-center ]
+  <section class="[ bg-[url(src/assets/images/home-ads.png)] bg-contain bg-no-repeat ] 
+    [ min-h-[calc(100vw_/_2.503)] flex items-center ]
     [ text-white ]">
 
     <div class="[ flex flex-col justify-center ] 
