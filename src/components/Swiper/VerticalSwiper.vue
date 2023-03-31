@@ -1,13 +1,6 @@
 <template>
-  <swiper :direction="'vertical'" :pagination="pagination" :modules="modules" :slides-per-view="1">
-    <swiper-slide v-for="{ image, link, name, id } in sliders" :key="id">
-      <a class="[ flex items-center justify-around gap-5 ] 
-        [ w-full h-full ]
-        px-16" :href="link" target="_blank">
-        <span class="text-[82px] font-bold leading-[62px]">{{ name }}</span>
-        <img :src="image" alt="Illustrated image" class="object-contain [ w-full h-full ]">
-      </a>
-    </swiper-slide>
+  <swiper :direction="'vertical'" :pagination="pagination" :modules="modules" :slides-per-view="1" class="verical-swiper">
+    <slot />
   </swiper>
 </template>
 
@@ -16,16 +9,11 @@ import { Swiper, SwiperSlide } from "swiper/vue"
 import "swiper/css"
 import "swiper/css/pagination"
 import { Pagination } from "swiper"
-import { PropType } from "vue"
-import { ISlider } from "../Home/Types"
 
 export default {
   components: {
     Swiper,
     SwiperSlide
-  },
-  props: {
-    sliders: Array as PropType<ISlider[]>
   },
   setup() {
     return {
@@ -42,13 +30,13 @@ export default {
 }
 </script>
 
-<style scoped>
-.swiper {
+<style>
+.swiper.verical-swiper {
   width: 100%;
   height: 100%;
 }
 
-.swiper-slide {
+.verical-swiper .swiper-slide {
   text-align: center;
   font-size: 18px;
   background: #EDF0F3;
@@ -58,13 +46,13 @@ export default {
   align-items: center;
 }
 
-.swiper-pagination-vertical.swiper-pagination-bullets.swiper-pagination-bullets-dynamic,
-.swiper-vertical>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+.verical-swiper .swiper-pagination-vertical.swiper-pagination-bullets.swiper-pagination-bullets-dynamic,
+.verical-swiper .swiper-vertical>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
   width: 30px;
   overflow: visible;
 }
 
-.swiper-pagination-bullet {
+.verical-swiper .swiper-pagination-bullet {
   position: relative;
   font-family: "Montserrat", sans-serif;
   width: 30px;
@@ -75,11 +63,11 @@ export default {
   background: transparent;
 }
 
-.swiper-pagination-bullet-active {
+.verical-swiper .swiper-pagination-bullet-active {
   opacity: 1;
 }
 
-.swiper-pagination-bullet-active::after {
+.verical-swiper .swiper-pagination-bullet-active::after {
   content: "";
   position: absolute;
   width: 19px;
