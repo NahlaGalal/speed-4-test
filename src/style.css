@@ -17,7 +17,7 @@
 
 @layer components {
   .custom-container {
-    @apply mx-14
+    @apply mx-6 sm:mx-14
   }
 
   .ltr {
