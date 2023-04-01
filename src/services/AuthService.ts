@@ -3,6 +3,7 @@ import { ILoginFormType } from "../Types/Login";
 import axios from "../utils/axiosBase";
 import { IActivateFormTypes } from "../Types/Activate";
 import { IForgetPasswordFormTypes } from "../Types/ForgetPassword";
+import { IResetPasswordFormType } from "../Types/ResetPassword";
 
 const additionalData = {
   device_token:
@@ -42,6 +43,12 @@ export const forgetPasswordHandler = async (body: IForgetPasswordFormTypes) => {
 
 export const passwordCodeHandler = async (body: IActivateFormTypes) => {
   const { data } = await axios.post("auth/check_code", body);
+
+  return data;
+};
+
+export const resetPasswordHandler = async (body: IResetPasswordFormType) => {
+  const { data } = await axios.post("auth/reset_password", body);
 
   return data;
 };
