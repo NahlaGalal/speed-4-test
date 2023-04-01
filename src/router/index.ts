@@ -3,6 +3,7 @@ import Home from "../views/Home.vue";
 import Landing from "../views/Landing.vue";
 import Signup from "../views/Signup.vue";
 import Login from "../views/Login.vue";
+import ForgetPassword from "../views/ForgetPassword.vue";
 import LayoutVue from "../components/Layout/Layout.vue";
 import AuthLayoutVue from "../components/AuthLayout/AuthLayout.vue";
 
@@ -31,6 +32,12 @@ const router = createRouter({
       path: "/login",
       name: "Login page",
       component: Login,
+      meta: { layout: AuthLayoutVue },
+    },
+    {
+      path: "/forget-password",
+      name: "Forget password page",
+      component: ForgetPassword,
       meta: { layout: AuthLayoutVue },
     }
   ],
