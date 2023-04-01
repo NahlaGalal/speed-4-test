@@ -9,6 +9,8 @@
         <Input id="password" label="كلمة المرور" placeholder="كلمة المرور" name="password" type="password" />
         <Input id="confirm_password" label="تأكيد كلمة المرور" placeholder="تأكيد كلمة المرور" name="confirm_password"
           type="password" />
+
+        <p v-if="apiError" class="text-base text-[#fa4248] block text-right" >{{ apiError }}</p>
         <Button type="submit" text="إنشاء حساب" class-names="mx-auto" />
       </Form>
     </template>
@@ -33,7 +35,11 @@ export default {
   components: { AuthContainer, Input, Button, Form },
   props: {
     schema: Object,
-    handleSubmit: Function as PropType<(values: any) => void>
-  }
+    handleSubmit: {
+      type: Function as PropType<(data: any) => Promise<void>>,
+      required: true
+    },
+    apiError: String
+  },
 }
 </script>
