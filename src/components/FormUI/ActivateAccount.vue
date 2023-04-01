@@ -25,6 +25,7 @@
 </template>
 
 <script lang="ts">
+import { PropType } from 'vue';
 import AuthContainer from '../AuthLayout/AuthContainer.vue';
 import Button from '../Button/Button.vue';
 import CodeInput from '../FormControl/CodeInput.vue';
@@ -36,14 +37,21 @@ export default {
     phone: {
       type: String,
       required: true
-    }
+    },
+    updateCode: {
+      type: Function as PropType<(code: string) => void>,
+      required: true
+    },
+    onSubmitHandler: {
+      type: Function as PropType<() => Promise<void>>,
+      required: true
+    },
+    codeError: String
   },
   data() {
     return {
       minsRemain: 5,
       secsRemain: 0,
-      code: "",
-      codeError: ""
     }
   },
   methods: {
@@ -58,16 +66,6 @@ export default {
         }
       }, 1000)
     },
-    updateCode(code: string) {
-      this.code = code
-    },
-    onSubmitHandler() {
-      if (this.code.includes("-"))
-        this.codeError = "الكود خاطئ"
-      else {
-        this.codeError = ""
-      }
-    }
   },
   created() {
     this.countDownTimer();
