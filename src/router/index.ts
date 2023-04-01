@@ -4,6 +4,7 @@ import Landing from "../views/Landing.vue";
 import Signup from "../views/Signup.vue";
 import Login from "../views/Login.vue";
 import ForgetPassword from "../views/ForgetPassword.vue";
+import PasswordCode from "../views/PasswordCode.vue";
 import LayoutVue from "../components/Layout/Layout.vue";
 import AuthLayoutVue from "../components/AuthLayout/AuthLayout.vue";
 
@@ -39,7 +40,13 @@ const router = createRouter({
       name: "Forget password page",
       component: ForgetPassword,
       meta: { layout: AuthLayoutVue },
-    }
+    },
+    {
+      path: "/password-code",
+      name: "Password code page",
+      component: PasswordCode,
+      meta: { layout: AuthLayoutVue },
+    },
   ],
 });
 
