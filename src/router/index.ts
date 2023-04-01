@@ -56,7 +56,7 @@ const router = createRouter({
       meta: { layout: AuthLayoutVue },
     },
     {
-      path: "/activate",
+      path: "/activate/:number",
       name: "Activate account page",
       component: ActivateAccount,
       meta: { layout: AuthLayoutVue },
