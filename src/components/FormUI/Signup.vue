@@ -2,14 +2,15 @@
   <AuthContainer header="أهلا بك" sub-header="من فضلك أدخل البيانات التالية لإنشاء حساب جديد" :is-logo-out="true">
 
     <template #section>
-      <form class="flex flex-col gap-7 w-full">
-        <Input id="name" label="إسم المستخدم" placeholder="إسم المستخدم" name="name" type="text" />
+      <Form class="flex flex-col gap-7 w-full" :validation-schema="schema" @submit="handleSubmit">
+        <Input id="name" label="إسم المستخدم" placeholder="إسم المستخدم" name="username" type="text" />
         <Input id="email" label="البريد الإلكتروني" placeholder="البريد الإلكتروني" name="email" type="email" />
         <Input id="phone" label="رقم الجوال" placeholder="رقم الجوال" name="phone" type="phone" />
         <Input id="password" label="كلمة المرور" placeholder="كلمة المرور" name="password" type="password" />
-        <Input id="confirm_password" label="تأكيد كلمة المرور" placeholder="تأكيد كلمة المرور" name="confirm_password" type="password" />
+        <Input id="confirm_password" label="تأكيد كلمة المرور" placeholder="تأكيد كلمة المرور" name="confirm_password"
+          type="password" />
         <Button type="submit" text="إنشاء حساب" class-names="mx-auto" />
-      </form>
+      </Form>
     </template>
 
     <template #text-bottom>
@@ -22,11 +23,17 @@
 </template>
 
 <script lang="ts">
+import { Form } from "vee-validate"
 import AuthContainer from '../AuthLayout/AuthContainer.vue';
 import Button from '../Button/Button.vue';
 import Input from '../FormControl/Input.vue';
+import { PropType } from "vue";
 
 export default {
-  components: { AuthContainer, Input, Button }
+  components: { AuthContainer, Input, Button, Form },
+  props: {
+    schema: Object,
+    handleSubmit: Function as PropType<(values: any) => void>
+  }
 }
 </script>
