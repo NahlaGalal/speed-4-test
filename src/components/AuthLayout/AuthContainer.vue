@@ -1,5 +1,5 @@
 <template>
-  <main class="flex flex-col justify-center items-center h-screen z-10 relative px-5">
+  <main class="flex flex-col justify-center items-center min-h-screen z-10 relative px-5 py-16">
     <!-- Logo => if logo is outside the white section -->
     <img src="../../assets/images/logo.svg" alt="Logo" v-if="isLogoOut" class="mb-20">
 

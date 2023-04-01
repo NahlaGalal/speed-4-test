@@ -5,12 +5,7 @@
     :is-logo-out="false">
 
     <template #section>
-      <RouterLink to="/register" class="[ py-3 px-5 sm:px-24 ]
-        [ w-full sm:w-max ]
-        [ rounded-full bg-[#6c98a2] ] 
-        [ text-white font-semibold ]">
-        إنشاء حساب
-      </RouterLink>
+      <Button to="/register" text="إنشاء حساب" />
   
       <RouterLink to="/" class="my-6 leading-5 text-black font-semibold">الدخول كزائر</RouterLink>
   
@@ -24,8 +19,9 @@
 
 <script lang="ts">
 import AuthContainer from '../components/AuthLayout/AuthContainer.vue';
+import Button from '../components/Button/Button.vue';
 
 export default {
-  components: { AuthContainer }
+  components: { AuthContainer, Button }
 }
 </script>
