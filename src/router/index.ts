@@ -6,6 +6,7 @@ import Login from "../views/Login.vue";
 import ForgetPassword from "../views/ForgetPassword.vue";
 import PasswordCode from "../views/PasswordCode.vue";
 import NewPassword from "../views/NewPassword.vue";
+import ActivateAccount from "../views/ActivateAccount.vue";
 import LayoutVue from "../components/Layout/Layout.vue";
 import AuthLayoutVue from "../components/AuthLayout/AuthLayout.vue";
 
@@ -52,6 +53,12 @@ const router = createRouter({
       path: "/new-password",
       name: "New password page",
       component: NewPassword,
+      meta: { layout: AuthLayoutVue },
+    },
+    {
+      path: "/activate",
+      name: "Activate account page",
+      component: ActivateAccount,
       meta: { layout: AuthLayoutVue },
     },
   ],
