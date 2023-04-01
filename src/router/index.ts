@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import Landing from "../views/Landing.vue";
 import Signup from "../views/Signup.vue";
+import Login from "../views/Login.vue";
 import LayoutVue from "../components/Layout/Layout.vue";
 import AuthLayoutVue from "../components/AuthLayout/AuthLayout.vue";
 
@@ -26,6 +27,12 @@ const router = createRouter({
       component: Signup,
       meta: { layout: AuthLayoutVue },
     },
+    {
+      path: "/login",
+      name: "Login page",
+      component: Login,
+      meta: { layout: AuthLayoutVue },
+    }
   ],
 });
 
