@@ -4,8 +4,9 @@
     <template #section>
       <p class="leading-5 text-black mb-10">{{ phone }}</p>
 
-      <form class="flex flex-col w-full">
-        <Input id="phone" label="رقم الجوال" placeholder="رقم الجوال" name="phone" type="phone" />
+      <form class="flex flex-col w-full" @submit.prevent="onSubmitHandler">
+        <CodeInput :update-code="updateCode" />
+        <p v-if="codeError" class="text-base text-[#fa4248] block text-right">{{ codeError }}</p>
 
         <p class="mt-10 text-[#6c98a2]">إرسال الكود بعد</p>
         <p class="text-2xl text-[#6c98a2] my-6">{{ minsRemain }}:{{ secsRemain }}</p>
@@ -26,10 +27,11 @@
 <script lang="ts">
 import AuthContainer from '../AuthLayout/AuthContainer.vue';
 import Button from '../Button/Button.vue';
+import CodeInput from '../FormControl/CodeInput.vue';
 import Input from '../FormControl/Input.vue';
 
 export default {
-  components: { AuthContainer, Input, Button },
+  components: { AuthContainer, Input, Button, CodeInput },
   props: {
     phone: {
       type: String,
@@ -40,11 +42,13 @@ export default {
     return {
       minsRemain: 5,
       secsRemain: 0,
+      code: "",
+      codeError: ""
     }
   },
   methods: {
     countDownTimer() {
-      let interval = setInterval(() => {        
+      let interval = setInterval(() => {
         if (this.secsRemain) this.secsRemain--;
         else {
           if (this.minsRemain) {
@@ -53,6 +57,16 @@ export default {
           } else clearInterval(interval)
         }
       }, 1000)
+    },
+    updateCode(code: string) {
+      this.code = code
+    },
+    onSubmitHandler() {
+      if (this.code.includes("-"))
+        this.codeError = "الكود خاطئ"
+      else {
+        this.codeError = ""
+      }
     }
   },
   created() {
