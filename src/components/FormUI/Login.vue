@@ -2,14 +2,16 @@
   <AuthContainer header="تسجيل الدخول إلى حسابك" sub-header="من فضلك قم بتسجيل بياناتك لتسجيل الدخول" :is-logo-out="true">
 
       <template #section>
-        <form class="flex flex-col gap-7 w-full">
-          <Input id="phone" label="رقم الجوال" placeholder="رقم الجوال" name="phone" type="phone" />
+        <Form class="flex flex-col gap-7 w-full" :validation-schema="schema" @submit="handleSubmit">
+          <Input id="email" label="البريد الإلكتروني" placeholder="البريد الإلكتروني" name="username" type="email" />
           <Input id="password" label="كلمة المرور" placeholder="كلمة المرور" name="password" type="password" />
+
+          <p v-if="apiError" class="text-base text-[#fa4248] block text-right" >{{ apiError }}</p>
 
           <RouterLink to="/forget-password" class="my-4 text-xl leading-5 text-[#fa4248]">نسيت كلمة المرور</RouterLink>
 
           <Button type="submit" text="تسجيل دخول" class-names="mx-auto" />
-        </form>
+        </Form>
       </template>
 
       <template #text-bottom>
@@ -22,11 +24,21 @@
 </template>
 
 <script lang="ts">
+import { PropType } from 'vue';
+import { Form } from "vee-validate"
 import AuthContainer from '../AuthLayout/AuthContainer.vue';
 import Button from '../Button/Button.vue';
 import Input from '../FormControl/Input.vue';
 
 export default {
-  components: { AuthContainer, Input, Button }
+  components: { AuthContainer, Input, Button, Form },
+  props: {
+    schema: Object,
+    handleSubmit: {
+      type: Function as PropType<(data: any) => Promise<void>>,
+      required: true
+    },
+    apiError: String
+  },
 }
 </script>
