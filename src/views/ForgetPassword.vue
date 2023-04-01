@@ -30,7 +30,7 @@ export default {
       try {
         const data = await forgetPasswordHandler(values)
         if (data.status === "success")
-          this.$router.push("password-code")
+          this.$router.push({ name: "Password code page", params: { number: values.phone } })
       } catch (err: any) {
         if (err.response.data.status === "fail") {
           this.apiError = err.response.data.message as string

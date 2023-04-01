@@ -30,15 +30,18 @@ export const verifyAccountHandler = async (body: IActivateFormTypes) => {
     ...body,
     ...additionalData,
   });
-  
+
   return data;
 };
 
-export const forgetPasswordHandler = async(body: IForgetPasswordFormTypes) => {
-  const { data } = await axios.post("auth/send_code", {
-    ...body,
-    ...additionalData,
-  });
-  
+export const forgetPasswordHandler = async (body: IForgetPasswordFormTypes) => {
+  const { data } = await axios.post("auth/send_code", body);
+
   return data;
-}
+};
+
+export const passwordCodeHandler = async (body: IActivateFormTypes) => {
+  const { data } = await axios.post("auth/check_code", body);
+
+  return data;
+};

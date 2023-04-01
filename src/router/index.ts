@@ -44,7 +44,7 @@ const router = createRouter({
       meta: { layout: AuthLayoutVue },
     },
     {
-      path: "/password-code",
+      path: "/password-code/:number",
       name: "Password code page",
       component: PasswordCode,
       meta: { layout: AuthLayoutVue },
