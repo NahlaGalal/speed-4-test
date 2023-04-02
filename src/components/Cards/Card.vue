@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col gap-4 text-right h-full">
     <!-- Product image -->
-    <img :src="product?.main_image" :alt="product?.name + 'Image'" class="h-80 xl:h-[518px] w-full object-cover rounded-[20px]" />
+    <img :src="product?.main_image" :alt="product?.name + 'Image'" class="h-80 xl:h-[518px] w-full object-cover rounded-[20px] product-image" />
 
     <!-- Product name -->
     <p class="text-2xl font-bold leading-5 whitespace-nowrap text-ellipsis overflow-hidden">{{ product?.name }}</p>
@@ -56,3 +56,11 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+@media screen and (max-width: 1600px) and (min-width: 1280px) {
+  .product-image {
+    height: 320px;
+  }
+}
+</style>

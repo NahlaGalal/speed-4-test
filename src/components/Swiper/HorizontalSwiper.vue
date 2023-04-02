@@ -3,7 +3,21 @@
     <!-- Prev arrow -->
     <Navigation navigation-type="prev" />
   
-    <swiper :slides-per-view="4" :space-between="65" class="w-[calc(100%_-_100px)]">
+    <swiper :slides-per-view="4" :space-between="65" class="w-[calc(100%_-_100px)]" 
+    :breakpoints="{
+      '1280': {
+        slidesPerView: 4,
+      },
+      '860': {
+        slidesPerView: 3
+      },
+      '600': {
+        slidesPerView: 2
+      },
+      '0': {
+        slidesPerView: 1
+      }
+    }">
       <slot />
     </swiper>
   

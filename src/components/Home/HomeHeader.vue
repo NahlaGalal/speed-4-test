@@ -2,11 +2,12 @@
   <header class="h-[calc(100vh_-_111px)] flex gap-20 items-center">
     <VerticalSwiper v-if="sliders?.length">
       <swiper-slide v-for="{ image, link, name, id } in sliders" :key="id">
-        <a class="[ flex items-center justify-around gap-5 ] 
+        <a class="[ flex items-center justify-around gap-5 ]
+            [ flex-col xl:flex-row ] 
             [ w-full h-full ]
             px-16" :href="link" target="_blank">
           <span class="text-[82px] font-bold leading-[62px]">{{ name }}</span>
-          <img :src="image" alt="Illustrated image" class="object-contain [ w-full h-full ]">
+          <img :src="image" alt="Illustrated image" class="object-contain [ w-4/5 h-auto ]">
         </a>
       </swiper-slide>
     </VerticalSwiper>

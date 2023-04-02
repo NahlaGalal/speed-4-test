@@ -1,13 +1,13 @@
 <template>
-  <section class="custom-container [ flex items-center ] ">
+  <section class="custom-container [ flex items-center flex-col-reverse xl:flex-row ] ">
     <!-- Text container -->
-    <div class="w-4/6
+    <div class="xl:w-4/6
       [ rounded-r-[40px] bg-[#f7f5ef] ]
       [ py-32 px-2 ]
       [ border border-[#edf0f3] ]">
 
       <!-- Take 2/3 of the full width only -->
-      <div class="[ flex flex-col ] w-4/6">
+      <div class="[ flex flex-col ] xl:w-4/6">
 
         <!-- About header -->
         <h2 class="text-6xl font-bold">معلومات عنا</h2>
@@ -35,6 +35,6 @@
 
     <!-- About image -->
     <img src="../../assets/images/home-about.png" alt="Illustrated image" 
-    class="-mr-48">
+    class="mx-auto xl:-mr-48 xl:ml-0">
   </section>
 </template>
