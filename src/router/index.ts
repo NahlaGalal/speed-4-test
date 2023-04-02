@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import Favourite from "../views/Favourite.vue";
 import Chats from "../views/Chats.vue";
+import Chat from "../views/Chat.vue";
 import Landing from "../views/Landing.vue";
 import Signup from "../views/Signup.vue";
 import Login from "../views/Login.vue";
@@ -31,6 +32,12 @@ const router = createRouter({
       path: "/chats",
       name: "Chats",
       component: Chats,
+      meta: { layout: LayoutVue },
+    },
+    {
+      path: "/chat/:productId/:recieverId",
+      name: "Chat page",
+      component: Chat,
       meta: { layout: LayoutVue },
     },
     {

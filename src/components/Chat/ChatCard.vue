@@ -6,7 +6,7 @@
     <div class="flex-1">
       <div class="flex justify-between flex-wrap items-center gap-4 mb-2 ">
         <!-- Reciever name -->
-        <RouterLink :to="'/chat/' + details.chat_id" class="text-[40px] font-bold leading-[45px]">{{ details.receiver_data.username }}</RouterLink>
+        <RouterLink :to="'/chat/' + details.product_id + '/' + details.receiver_id" class="text-[40px] font-bold leading-[45px]">{{ details.receiver_data.username }}</RouterLink>
 
         <!-- Date of chat -->
         <p class="text-3xl leading-[55px] font-medium text-[#bcbcbe]">{{ details.created_at }}</p>
