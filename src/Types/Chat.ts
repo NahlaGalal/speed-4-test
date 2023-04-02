@@ -34,4 +34,5 @@ export interface IPagination {
 export interface IChatService {
   data: IChat[];
   meta: IPagination;
+  loading?: boolean
 }

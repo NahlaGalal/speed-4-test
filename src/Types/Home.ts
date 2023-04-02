@@ -8,6 +8,7 @@ export interface IHomeDetails {
     latest_auctions: IProduct[];
     latest_products: IProduct[];
     slider: ISlider[];
+    isLoading?: boolean;
   };
   unreaded_message_count: number;
 }

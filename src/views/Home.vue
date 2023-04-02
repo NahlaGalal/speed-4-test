@@ -8,6 +8,9 @@
     <HomeAds />
     <HomeProducts :products="latest_products" :title="'أحدث الإضافات'" v-if="latest_products.length"
       @toggle-favourites="toggleFavourite" />
+
+    <!-- Loading component -->
+    <Loading v-model:active="isLoading" :is-full-page="true" />
   </div>
 </template>
 
@@ -20,15 +23,17 @@ import HomeAds from '../components/Home/HomeAds.vue';
 import { getHomeDetails } from "../services/HomeService"
 import { toggleFavouritesHandler } from "../services/FavouritesService"
 import { IHomeDetails } from "../Types"
+import Loading from 'vue-loading-overlay';
 
 export default {
-  components: { HomeHeader, HomeAbout, HomeCategories, HomeProducts, HomeAds },
+  components: { HomeHeader, HomeAbout, HomeCategories, HomeProducts, HomeAds, Loading },
   data(): IHomeDetails["data"] {
     return {
       slider: [],
       categories: [],
       latest_auctions: [],
       latest_products: [],
+      isLoading: false
     }
   },
   mounted() {
@@ -36,21 +41,30 @@ export default {
   },
   methods: {
     async getHomeData() {
+      this.isLoading = true;
+
       const res: IHomeDetails = await getHomeDetails();
+
+      this.isLoading = false;
       this.slider = res.data.slider;
       this.categories = res.data.categories;
       this.latest_auctions = res.data.latest_auctions;
       this.latest_products = res.data.latest_products;
     },
     async toggleFavourite(productId: number) {
+      this.isLoading = true;
+
       try {
         // Add / Remove from favourites
         await toggleFavouritesHandler(productId);
 
         // Update products
         await this.getHomeData();
+
+        this.isLoading = false;
       } catch (err) {
         console.log(err)
+        this.isLoading = false;
       }
     }
   },

@@ -20,6 +20,7 @@ export interface IChatDetails {
   product_id: string;
   receiver_id: string;
   apiError: string;
+  loading?: boolean
 }
 
 export interface ISendMessageFormTypes {
