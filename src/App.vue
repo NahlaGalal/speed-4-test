@@ -1,5 +1,5 @@
 <template>
-  <component :is="this.$route.meta.layout || 'div'">
+  <component :is="$route.meta.layout || 'div'">
     <RouterView />
   </component>
   
@@ -7,4 +7,7 @@
 
 <script lang="ts">
 import { RouterView } from "vue-router";
+export default {
+
+}
 </script>
