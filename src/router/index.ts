@@ -35,7 +35,7 @@ const router = createRouter({
       meta: { layout: LayoutVue },
     },
     {
-      path: "/chat/:productId/:recieverId",
+      path: "/chat/:productId/:receiverId",
       name: "Chat page",
       component: Chat,
       meta: { layout: LayoutVue },

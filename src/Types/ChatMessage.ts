@@ -17,6 +17,14 @@ export interface IChatMessage {
 
 export interface IChatDetails {
   messages: IChatMessage[];
-  productId: string;
-  recieverId: string;
+  product_id: string;
+  receiver_id: string;
+  apiError: string;
+}
+
+export interface ISendMessageFormTypes {
+  product_id: string;
+  receiver_id: string;
+  message_type: string;
+  message: string;
 }
