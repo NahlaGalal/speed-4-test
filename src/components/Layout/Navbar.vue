@@ -79,7 +79,7 @@
       <!-- Show in drawer in small screen -->
       <li class="text-lg px-9 py-1 bg-[#f7f5ef] rounded-full font-medium
         xl:hidden">
-        <RouterLink to="/register">سجل الان</RouterLink>
+        <RouterLink to="/landing">سجل الان</RouterLink>
       </li>
     </ul>
 
@@ -88,7 +88,7 @@
     <ul class="hidden md:flex flex-wrap items-center gap-10">
       <li class="text-lg px-9 py-1 bg-[#f7f5ef] rounded-full font-medium
         hidden xl:block">
-        <RouterLink to="/register">سجل الان</RouterLink>
+        <RouterLink to="/landing">سجل الان</RouterLink>
       </li>
 
       <li class="h-5">

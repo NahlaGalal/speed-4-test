@@ -25,6 +25,8 @@ export const LoginHandler = async (body: ILoginFormType) => {
     ...additionalData,
   });
 
+  localStorage.setItem("user", JSON.stringify(data.data))
+
   return data;
 };
 

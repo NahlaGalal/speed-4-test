@@ -14,6 +14,12 @@
 
 <script lang="ts">
 export default {
+  mounted() {
+    const userToken = localStorage.getItem("user");
 
+    if(userToken) {
+      this.$router.push("/")
+    }
+  },
 }
 </script>
