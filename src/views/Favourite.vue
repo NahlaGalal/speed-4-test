@@ -1,16 +1,16 @@
 <template>
-  <FavouriteHeader />
+  <PageHeader bg-image="src/assets/images/favourite-header.png" heading="المفضلة" />
   <CardsContainer :products="products" @toggle-favourites="toggleFavourite" />
 </template>
 
 <script lang="ts">
 import CardsContainer from '../components/Cards/CardsContainer.vue';
-import FavouriteHeader from '../components/Favourite/FavouriteHeader.vue';
+import PageHeader from '../components/Layout/PageHeader.vue';
 import { getFavouriteProducts, toggleFavouritesHandler } from "../services/FavouritesService"
 import { IProduct } from '../Types';
 
 export default {
-  components: { FavouriteHeader, CardsContainer },
+  components: { CardsContainer, PageHeader },
   data(): { products: IProduct[] } {
     return {
       products: []
