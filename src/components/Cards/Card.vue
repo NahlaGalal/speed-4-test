@@ -1,15 +1,15 @@
 <template>
-  <div class="flex flex-col gap-4 text-right">
+  <div class="flex flex-col gap-4 text-right h-full">
     <!-- Product image -->
     <img :src="product?.main_image" :alt="product?.name + 'Image'" class="h-80 xl:h-[518px] w-full object-cover rounded-[20px]" />
 
     <!-- Product name -->
-    <p class="text-2xl font-bold leading-5">{{ product?.name }}</p>
+    <p class="text-2xl font-bold leading-5 whitespace-nowrap text-ellipsis overflow-hidden">{{ product?.name }}</p>
 
     <!-- Product category -->
     <p class="text-[#958a7e] text-lg font-light" v-if="product?.category?.name">{{ product?.category?.name }}</p>
 
-    <div class="flex items-center gap-6 flex-wrap">
+    <div class="flex items-center gap-6 flex-wrap mt-auto">
       <!-- Product price -->
       <p class="text-xl font-semibold">{{ product?.product_price }} ر.س</p>
 
@@ -20,7 +20,8 @@
 
       <!-- Add to favourite -->
       <button>
-        <img src="../../assets/images/heart.svg" alt="Favourite icon" title="Add to favourites" class="h-7 w-auto">
+        <img v-if="product?.is_fav" src="../../assets/images/heart-filled.svg" alt="Favourite icon" title="Remove from favourites" class="h-7 w-auto">
+        <img v-else src="../../assets/images/heart.svg" alt="Favourite icon" title="Add to favourites" class="h-7 w-auto">
       </button>
     </div>
 

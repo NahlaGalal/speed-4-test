@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
+import Favourite from "../views/Favourite.vue";
 import Landing from "../views/Landing.vue";
 import Signup from "../views/Signup.vue";
 import Login from "../views/Login.vue";
@@ -17,6 +18,12 @@ const router = createRouter({
       path: "/",
       name: "Home",
       component: Home,
+      meta: { layout: LayoutVue },
+    },
+    {
+      path: "/favourites",
+      name: "Favourites",
+      component: Favourite,
       meta: { layout: LayoutVue },
     },
     {

@@ -10,9 +10,12 @@ export default {
 </script>
 
 <template>
-  <div class="bg-[#fbf9f4]">
+  <div class="bg-[#fbf9f4] flex flex-col justify-between min-h-screen">
     <Navbar />
-    <slot />
+
+    <div class="flex-1">
+      <slot />
+    </div>
     <Footer />
   </div>
 </template>
