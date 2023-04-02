@@ -1,6 +1,6 @@
 <template>
-  <footer class="bg-black text-white px-36 pt-10 pb-3 mt-32">
-    <div class="grid grid-cols-4 justify-between gap-14">
+  <footer class="bg-black text-white px-10 sm:px-36 pt-10 pb-3 mt-32">
+    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 justify-between gap-14">
       <!-- Logo, about and contact data -->
       <div>
         <img src="../../assets/images/logo-white.svg" alt="Logo">
@@ -16,7 +16,7 @@
       </div>
   
       <!-- Helper links -->
-      <nav class="mr-auto"> 
+      <nav class="sm:mr-auto"> 
         <h2 class="text-2xl font-bold mb-4">الأقسام الرئيسية</h2>
         <ul class="flex flex-col gap-4">
           <li class="text-lg">
@@ -68,7 +68,7 @@
       </nav>
 
       <!-- Download -->
-      <div class="mr-auto">
+      <div class="sm:mr-auto">
         <h2 class="text-xl text-left">Download Our Mobile App</h2>
 
         <div class="mt-6 flex items-end gap-7">
