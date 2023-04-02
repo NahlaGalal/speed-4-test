@@ -1,7 +1,7 @@
 <template>
   <div class="flex">
     <!-- Prev arrow -->
-    <Navigation navigation-type="prev" />
+    <!-- <Navigation navigation-type="prev" /> -->
   
     <swiper :slides-per-view="4" :space-between="65" class="w-[calc(100%_-_100px)]" 
     :breakpoints="{
@@ -22,7 +22,7 @@
     </swiper>
   
     <!-- Next arrow -->
-    <Navigation navigation-type="next" />
+    <!-- <Navigation navigation-type="next" /> -->
   </div>
 </template>
 
