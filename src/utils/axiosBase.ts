@@ -1,5 +1,12 @@
 import axios from "axios";
 
-axios.defaults.baseURL = "https://speed4ever.elsaed.aait-d.com/public/app";
+const baseURL = "https://speed4ever.elsaed.aait-d.com/public/app";
 
-export default axios;
+const apiClient = axios.create({
+  baseURL,
+  headers: {
+    "Accept-Language": "ar",
+  },
+});
+
+export default apiClient;
