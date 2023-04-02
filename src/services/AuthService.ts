@@ -56,3 +56,9 @@ export const resetPasswordHandler = async (body: IResetPasswordFormType) => {
 
   return data;
 };
+
+export const logoutHandler = async () => {
+  const { data } = await axios.post("auth/logout", additionalData);
+
+  return data;
+}

@@ -25,12 +25,5 @@ export default {
       required: true
     }
   },
-  mounted() {
-    const userToken = localStorage.getItem("user");
-
-    if (!userToken && this.$route.path !== "/") {
-      this.$router.push("/landing")
-    }
-  },
 }
 </script>
