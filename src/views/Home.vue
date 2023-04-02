@@ -3,9 +3,11 @@
     <HomeHeader :sliders="slider" />
     <HomeAbout />
     <HomeCategories :categories="categories" />
-    <HomeProducts :products="latest_auctions" :title="'أحدث المزادات'" v-if="latest_auctions.length" />
+    <HomeProducts :products="latest_auctions" :title="'أحدث المزادات'" v-if="latest_auctions.length"
+      @toggle-favourites="toggleFavourite" />
     <HomeAds />
-    <HomeProducts :products="latest_products" :title="'أحدث الإضافات'" v-if="latest_products.length" />
+    <HomeProducts :products="latest_products" :title="'أحدث الإضافات'" v-if="latest_products.length"
+      @toggle-favourites="toggleFavourite" />
   </div>
 </template>
 
@@ -16,6 +18,7 @@ import HomeHeader from '../components/Home/HomeHeader.vue';
 import HomeProducts from '../components/Home/HomeProducts.vue';
 import HomeAds from '../components/Home/HomeAds.vue';
 import { getHomeDetails } from "../services/HomeService"
+import { toggleFavouritesHandler } from "../services/FavouritesService"
 import { IHomeDetails } from "../Types"
 
 export default {
@@ -28,12 +31,28 @@ export default {
       latest_products: [],
     }
   },
-  async mounted() {
-    const res: IHomeDetails = await getHomeDetails();
-    this.slider = res.data.slider;
-    this.categories = res.data.categories;
-    this.latest_auctions = res.data.latest_auctions;
-    this.latest_products = res.data.latest_products;
-  }
+  mounted() {
+    this.getHomeData();
+  },
+  methods: {
+    async getHomeData() {
+      const res: IHomeDetails = await getHomeDetails();
+      this.slider = res.data.slider;
+      this.categories = res.data.categories;
+      this.latest_auctions = res.data.latest_auctions;
+      this.latest_products = res.data.latest_products;
+    },
+    async toggleFavourite(productId: number) {
+      try {
+        // Add / Remove from favourites
+        await toggleFavouritesHandler(productId);
+
+        // Update products
+        await this.getHomeData();
+      } catch (err) {
+        console.log(err)
+      }
+    }
+  },
 }
 </script>

@@ -2,7 +2,7 @@
   <section class="custom-container">
     <h2 class="text-6xl leading-[50px] font-bold text-center mb-[75px]">{{ title }}</h2>
 
-    <CardsSwiper :products="products" />
+    <CardsSwiper :products="products" @toggle-favourites="$emit('toggleFavourites', $event)" />
 
     <RouterLink to="/" class="[ text-2xl font-bold ] mt-[88px]
       [ flex justify-center items-center gap-8 ]">
@@ -19,10 +19,11 @@ import HorizontalSwiper from '../Swiper/HorizontalSwiper.vue';
 import CardsSwiper from '../Cards/CardsSwiper.vue';
 
 export default {
+  emits: ['toggleFavourites'],
   components: { HorizontalSwiper, CardsSwiper },
   props: {
     products: Array as PropType<IProduct[]>,
-    title: String
-  }
+    title: String,
+  },
 }
 </script>

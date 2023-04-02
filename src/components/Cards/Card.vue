@@ -19,7 +19,7 @@
       </button>
 
       <!-- Add to favourite -->
-      <button>
+      <button @click="toggleFavouritesHandler(product.id)">
         <img v-if="product?.is_fav" src="../../assets/images/heart-filled.svg" alt="Favourite icon" title="Remove from favourites" class="h-7 w-auto">
         <img v-else src="../../assets/images/heart.svg" alt="Favourite icon" title="Add to favourites" class="h-7 w-auto">
       </button>
@@ -35,8 +35,12 @@ import { IProduct } from '../../Types';
 import { useSwiper } from "swiper/vue"
 
 export default {
+  emits: ['toggleFavourites'],
   props: {
-    product: Object as PropType<IProduct>
+    product: {
+      type: Object as PropType<IProduct>,
+      required: true
+    }
   },
   setup() {
     const swiper = useSwiper();
@@ -45,5 +49,10 @@ export default {
       swiper
     }
   },
+  methods: {
+    toggleFavouritesHandler(productId: number) {
+      this.$emit("toggleFavourites", productId);
+    }
+  }
 }
 </script>
