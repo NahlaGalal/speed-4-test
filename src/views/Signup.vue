@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import { ISignupFormType } from '../Types/Signup';
+import { ISignupFormType } from '../Types';
 import Signup from '../components/FormUI/Signup.vue';
 import { object, string, ref } from "yup"
 import { SignupHandler } from '../services/AuthService';

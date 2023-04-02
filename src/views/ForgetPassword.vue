@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import { IForgetPasswordFormTypes } from '../Types/ForgetPassword';
+import { IForgetPasswordFormTypes } from '../Types';
 import ForgetPassword from '../components/FormUI/ForgetPassword.vue';
 import { object, string } from "yup"
 import { forgetPasswordHandler } from '../services/AuthService';

@@ -1,4 +1,4 @@
-import { IHomeDetails } from "../components/Home/Types";
+import { IHomeDetails } from "../Types";
 import axios from "../utils/axiosBase";
 
 export const getHomeDetails = async (): Promise<IHomeDetails> => {

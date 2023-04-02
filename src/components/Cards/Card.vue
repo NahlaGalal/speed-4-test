@@ -30,7 +30,7 @@
 
 <script lang="ts">
 import { PropType } from 'vue';
-import { IProduct } from '../Home/Types';
+import { IProduct } from '../../Types';
 import { useSwiper } from "swiper/vue"
 
 export default {

@@ -14,7 +14,7 @@
 
 <script lang="ts">
 import { PropType } from 'vue';
-import { IProduct } from "./Types";
+import { IProduct } from "../../Types";
 import HorizontalSwiper from '../Swiper/HorizontalSwiper.vue';
 import CardsSwiper from '../Cards/CardsSwiper.vue';
 

@@ -21,7 +21,7 @@
 
 <script lang="ts">
 import { PropType } from 'vue';
-import { ICategory } from './Types';
+import { ICategory } from '../../Types';
 
 export default {
   props: {

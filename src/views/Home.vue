@@ -16,7 +16,7 @@ import HomeHeader from '../components/Home/HomeHeader.vue';
 import HomeProducts from '../components/Home/HomeProducts.vue';
 import HomeAds from '../components/Home/HomeAds.vue';
 import { getHomeDetails } from "../services/HomeService"
-import { IHomeDetails } from "../components/Home/Types"
+import { IHomeDetails } from "../Types"
 
 export default {
   components: { HomeHeader, HomeAbout, HomeCategories, HomeProducts, HomeAds },

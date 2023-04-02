@@ -41,7 +41,7 @@
 import { PropType } from 'vue';
 import { SwiperSlide } from "swiper/vue"
 import VerticalSwiper from '../Swiper/VerticalSwiper.vue';
-import { ISlider } from "./Types"
+import { ISlider } from "../../Types"
 
 export default {
   components: { VerticalSwiper, SwiperSlide },

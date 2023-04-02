@@ -9,7 +9,7 @@
 <script lang="ts">
 import { SwiperSlide, useSwiper } from "swiper/vue"
 import { PropType } from 'vue';
-import { IProduct } from '../Home/Types';
+import { IProduct } from '../../Types';
 import Card from './Card.vue';
 import HorizontalSwiper from '../Swiper/HorizontalSwiper.vue';
 

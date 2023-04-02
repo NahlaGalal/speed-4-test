@@ -5,7 +5,7 @@
 <script lang="ts">
 import { object, string, ref } from "yup"
 import NewPassword from '../components/FormUI/NewPassword.vue';
-import { IResetPasswordFormType } from "../Types/ResetPassword"
+import { IResetPasswordFormType } from "../Types"
 import { resetPasswordHandler } from '../services/AuthService';
 
 export default {

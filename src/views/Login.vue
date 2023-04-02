@@ -4,7 +4,7 @@
 
 <script lang="ts">
 import Login from '../components/FormUI/Login.vue';
-import { ILoginFormType } from '../Types/Login';
+import { ILoginFormType } from '../Types';
 import { object, string } from "yup"
 import { LoginHandler } from '../services/AuthService';
 

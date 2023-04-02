@@ -1,9 +1,11 @@
-import { ISignupFormType } from "../Types/Signup";
-import { ILoginFormType } from "../Types/Login";
+import {
+  ISignupFormType,
+  ILoginFormType,
+  IActivateFormTypes,
+  IForgetPasswordFormTypes,
+  IResetPasswordFormType,
+} from "../Types";
 import axios from "../utils/axiosBase";
-import { IActivateFormTypes } from "../Types/Activate";
-import { IForgetPasswordFormTypes } from "../Types/ForgetPassword";
-import { IResetPasswordFormType } from "../Types/ResetPassword";
 
 const additionalData = {
   device_token:
