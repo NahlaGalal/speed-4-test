@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-[#fbf9f4] min-h-screen relative">
+  <div class="bg-greyColor min-h-screen relative">
     <!-- Top circle -->
     <img src="../../assets/images/part-circle.png" alt="Part circle"
     class="absolute top-0 right-0 max-w-[50%] max-h-[50%]">

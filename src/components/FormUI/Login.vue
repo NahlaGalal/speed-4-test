@@ -6,16 +6,16 @@
           <Input id="email" label="البريد الإلكتروني" placeholder="البريد الإلكتروني" name="username" type="email" />
           <Input id="password" label="كلمة المرور" placeholder="كلمة المرور" name="password" type="password" />
 
-          <p v-if="apiError" class="text-base text-[#fa4248] block text-right" >{{ apiError }}</p>
+          <p v-if="apiError" class="text-base text-errorColor block text-right" >{{ apiError }}</p>
 
-          <RouterLink to="/forget-password" class="my-4 text-xl leading-5 text-[#fa4248]">نسيت كلمة المرور</RouterLink>
+          <RouterLink to="/forget-password" class="my-4 text-xl leading-5 text-errorColor">نسيت كلمة المرور</RouterLink>
 
           <Button type="submit" text="تسجيل دخول" class-names="mx-auto" />
         </Form>
       </template>
 
       <template #text-bottom>
-        <p class="leading-5 text-4xl font-medium text-[#958a7e] mt-7">
+        <p class="leading-5 text-4xl font-medium text-brownColor mt-7">
           ليس لديك حساب بالفعل؟ 
           <RouterLink to="/register" class="font-bold text-black">إنشاء حساب جديد</RouterLink>
         </p>

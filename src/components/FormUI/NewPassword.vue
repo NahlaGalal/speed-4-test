@@ -8,7 +8,7 @@
         <Input id="confirm_password" label="تأكيد كلمة المرور الجديدة" placeholder="************" name="confirm_password"
           type="password" />
 
-        <p v-if="apiError" class="text-base text-[#fa4248] block text-right">{{ apiError }}</p>
+        <p v-if="apiError" class="text-base text-errorColor block text-right">{{ apiError }}</p>
         <Button type="submit" text="إرسال" class-names="mx-auto" />
       </Form>
     </template>

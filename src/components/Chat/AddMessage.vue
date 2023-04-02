@@ -4,16 +4,16 @@
               [ mx-auto mt-44 ]" :validation-schema="schema" @submit="onSubmitHandler($event)"
     :initial-values="defaults">
     <button title="Send Message" class="[ w-24 h-24 ] 
-                  [ rounded-full bg-[#6c98a2] ]
+                  [ rounded-full bg-mainColor ]
                   [ flex justify-center items-center ]">
       <img src="../../assets/images/send.svg" alt="Send icon">
     </button>
 
     <Field as="textarea" name="message" class="[ h-[104px] flex-1 ] resize-none
-                  [ rounded-full bg-[#f7f5ef] ] 
+                  [ rounded-full bg-lightGreyColor ] 
                   [ text-xl pr-10 py-4 ]
                   [ border border-[#43290A] border-opacity-5 ]" v-model="message"></Field>
-    <ErrorMessage name="message" class="w-full text-base text-[#fa4248] block text-right" />
+    <ErrorMessage name="message" class="w-full text-base text-errorColor block text-right" />
   </Form>
 </template>
 

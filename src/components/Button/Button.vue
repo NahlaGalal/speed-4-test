@@ -2,14 +2,14 @@
   <!-- If to prop is undefined then it is a regular button -->
   <button :type="type" v-if="!to" :class="`[ py-3 px-5 sm:px-24 ] 
   [ w-full sm:w-max ] 
-  [ rounded-full bg-[#6c98a2] ] 
+  [ rounded-full bg-mainColor ] 
   [ text-white font-semibold text-3xl ] ` + classNames" 
   @click="onClick">{{ text }}</button>
 
   <!-- If to prop is not undefined then it is a link -->
   <RouterLink :to="to" v-else :class="`[ py-3 px-5 sm:px-24 ]
     [ w-full sm:w-max ]
-    [ rounded-full bg-[#6c98a2] ] 
+    [ rounded-full bg-mainColor ] 
     [ text-white font-semibold text-3xl ] ` + classNames"
     >
     {{ text }}

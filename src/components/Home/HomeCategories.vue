@@ -3,7 +3,7 @@
     <ul class="[ grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 grid-rows-2 gap-6 ]">
 
       <!-- Loop for all categories -->
-      <li v-for="({ id, image, name }) in categories" :key="id" class="[ bg-[#f7f5ef] rounded-xl ]
+      <li v-for="({ id, image, name }) in categories" :key="id" class="[ bg-lightGreyColor rounded-xl ]
         [ border border-[#43290a0d] ]
         [ px-6 pb-6 pt-4 ]
         [ flex flex-col items-center justify-center ]

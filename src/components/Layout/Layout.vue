@@ -10,7 +10,7 @@ export default {
 </script>
 
 <template>
-  <div class="bg-[#fbf9f4] flex flex-col justify-between min-h-screen">
+  <div class="bg-greyColor flex flex-col justify-between min-h-screen">
     <Navbar />
 
     <div class="flex-1">

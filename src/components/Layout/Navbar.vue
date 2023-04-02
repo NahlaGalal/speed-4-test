@@ -19,7 +19,7 @@
       [ flex-col xl:flex-row ]
       [ absolute xl:relative ]
       [ right-0 top-0 ]
-      [ bg-[#fbf9f4] xl:bg-transparent ]
+      [ bg-greyColor xl:bg-transparent ]
       [ h-[calc(100vh_-_111px)] xl:h-auto ]
       [ mt-[111px] xl:mt-0 ]
       [ p-5 pl-10 xl:p-0 ]
@@ -77,7 +77,7 @@
       </li>
 
       <!-- Show in drawer in small screen -->
-      <li class="text-lg px-9 py-1 bg-[#f7f5ef] rounded-full font-medium
+      <li class="text-lg px-9 py-1 bg-lightGreyColor rounded-full font-medium
         xl:hidden">
         <RouterLink to="/landing">سجل الان</RouterLink>
       </li>
@@ -86,7 +86,7 @@
     <!-- Icon links and registeration -->
     <!-- In large screens -->
     <ul class="hidden md:flex flex-wrap items-center gap-10">
-      <li class="text-lg px-9 py-1 bg-[#f7f5ef] rounded-full font-medium
+      <li class="text-lg px-9 py-1 bg-lightGreyColor rounded-full font-medium
         hidden xl:block">
         <RouterLink to="/landing">سجل الان</RouterLink>
       </li>

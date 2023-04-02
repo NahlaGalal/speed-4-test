@@ -6,7 +6,7 @@
     <section class="bg-white text-center w-max rounded-[60px] 
       [ py-12 px-6 sm:px-[86px] ]
       [ flex flex-col justify-center items-center ]
-      [ text-3xl font-medium text-[#958a7e] ]">
+      [ text-3xl font-medium text-brownColor ]">
 
       <!-- Logo => if logo is inside the white section -->
       <img src="../../assets/images/logo.svg" alt="Logo" v-if="!isLogoOut" class="mb-16">

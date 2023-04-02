@@ -7,7 +7,7 @@
     <p class="text-2xl font-bold leading-5 whitespace-nowrap text-ellipsis overflow-hidden">{{ product?.name }}</p>
 
     <!-- Product category -->
-    <p class="text-[#958a7e] text-lg font-light" v-if="product?.category?.name">{{ product?.category?.name }}</p>
+    <p class="text-brownColor text-lg font-light" v-if="product?.category?.name">{{ product?.category?.name }}</p>
 
     <div class="flex items-center gap-6 flex-wrap mt-auto">
       <!-- Product price -->

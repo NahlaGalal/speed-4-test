@@ -6,13 +6,13 @@
 
       <form class="flex flex-col w-full" @submit.prevent="onSubmitHandler">
         <CodeInput :update-code="updateCode" />
-        <p v-if="codeError" class="text-base text-[#fa4248] block text-right">{{ codeError }}</p>
+        <p v-if="codeError" class="text-base text-errorColor block text-right">{{ codeError }}</p>
 
-        <p class="mt-10 text-[#6c98a2]">إرسال الكود بعد</p>
-        <p class="text-2xl text-[#6c98a2] my-6">{{ minsRemain }}:{{ secsRemain }}</p>
+        <p class="mt-10 text-mainColor">إرسال الكود بعد</p>
+        <p class="text-2xl text-mainColor my-6">{{ minsRemain }}:{{ secsRemain }}</p>
 
         <button
-          :class="(minsRemain === 0 && secsRemain === 0) ? 'cursor-pointer text-[#6c98a2] mb-10' : 'cursor-not-allowed text-[#958a7e] mb-10'"
+          :class="(minsRemain === 0 && secsRemain === 0) ? 'cursor-pointer text-[#6c98a2] mb-10' : 'cursor-not-allowed text-brownColor mb-10'"
           :disabled="minsRemain !== 0 || secsRemain !== 0">
           أعد إرسال الكود
         </button>

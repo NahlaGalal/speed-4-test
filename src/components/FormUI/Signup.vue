@@ -10,13 +10,13 @@
         <Input id="confirm_password" label="تأكيد كلمة المرور" placeholder="تأكيد كلمة المرور" name="confirm_password"
           type="password" />
 
-        <p v-if="apiError" class="text-base text-[#fa4248] block text-right" >{{ apiError }}</p>
+        <p v-if="apiError" class="text-base text-errorColor block text-right" >{{ apiError }}</p>
         <Button type="submit" text="إنشاء حساب" class-names="mx-auto" />
       </Form>
     </template>
 
     <template #text-bottom>
-      <p class="leading-5 text-4xl font-medium text-[#958a7e] mt-7">
+      <p class="leading-5 text-4xl font-medium text-brownColor mt-7">
         لديك حساب بالفعل؟
         <RouterLink to="/login" class="font-bold text-black">تسجيل دخول</RouterLink>
       </p>

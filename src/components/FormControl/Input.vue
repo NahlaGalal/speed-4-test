@@ -1,11 +1,11 @@
 <template>
   <div>
-    <label :for="id" class="text-lg font-medium leading-6 mb-1 text-[#958a7e] block text-right">{{ label }}</label>
+    <label :for="id" class="text-lg font-medium leading-6 mb-1 text-brownColor block text-right">{{ label }}</label>
     <Field :type="type" :placeholder="placeholder" :id="id" :name="name" class="[ border-0 border-b borer-b-[#DDD] ]
     [ text-xl font-medium leading-7 ]
     [ text-black placeholder:text-black ]
     outline-none w-full pb-1 " />
-    <ErrorMessage :name="name" class="text-base text-[#fa4248] block text-right" />
+    <ErrorMessage :name="name" class="text-base text-errorColor block text-right" />
   </div>
 </template>
 

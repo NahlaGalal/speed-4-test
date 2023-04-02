@@ -2,7 +2,7 @@
   <section class="custom-container [ flex items-center flex-col-reverse xl:flex-row ] ">
     <!-- Text container -->
     <div class="xl:w-4/6
-      [ rounded-r-[40px] bg-[#f7f5ef] ]
+      [ rounded-r-[40px] bg-lightGreyColor ]
       [ py-32 px-2 ]
       [ border border-[#edf0f3] ]">
 
