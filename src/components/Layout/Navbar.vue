@@ -1,6 +1,6 @@
 <template>
   <nav class="relative [ flex justify-between items-center gap-5 ] 
-      px-5 md:px-14 h-[111px]">
+      px-5 md:px-14 h-[111px] z-10">
     <!-- Hamburger icon -->
     <!-- Show only on small screens -->
     <button class="xl:hidden" @click="toggleCollapse">
@@ -129,6 +129,6 @@ export default {
     toggleCollapse() {
       this.isCollabsed = !this.isCollabsed
     }
-  },
+  }
 }
 </script>
