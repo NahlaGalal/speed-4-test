@@ -44,7 +44,7 @@ export default {
       </li>
 
       <li>
-        <RouterLink to="/chat">
+        <RouterLink to="/chats">
           <img src="../../assets/images/chat.svg" alt="Chat icon" title="Chat" />
         </RouterLink>
       </li>
